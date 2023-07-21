@@ -1,9 +1,12 @@
+import { About } from './Components/About';
+import { Map } from './Components/Map';
 
 function App() {
 
   return (
     <>
-     <h1>Helo</h1>
+     <About/>
+     <Map/>
     </>
   )
 }
