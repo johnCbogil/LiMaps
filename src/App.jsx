@@ -1,13 +1,14 @@
 import { About } from './Components/About';
 import { Map } from './Components/Map';
+import './App.css';
 
 function App() {
 
   return (
-    <>
-     <About/>
-     <Map/>
-    </>
+    <div className="container">
+    <About />
+    <Map />
+</div>
   )
 }
 

@@ -1,0 +1,17 @@
+html, body, #root, .container {
+    height: 100%;
+}
+
+.container {
+    display: flex;
+}
+
+.About {
+    flex: 1;
+    background-color: #add8e6; /* Light Blue */
+}
+
+.Map {
+    flex: 2;
+    background-color: #90ee90; /* Light Green */
+}
