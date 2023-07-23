@@ -53,7 +53,7 @@ export const MapView = () => {
               handleOpen(); // Open the modal when a pin is clicked
             }}
           >
-            <img src="src/pin.svg" />
+            <img src="/pin.svg" />
           </Marker>
         ))}
       </Map>
