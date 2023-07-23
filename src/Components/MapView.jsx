@@ -2,17 +2,18 @@ import React from "react";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
+import Typography from "@mui/material/Typography";
 import { Map, Marker } from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
-import collectors from '../assets/collectors.json';
+import collectors from "../assets/collectors.json";
 
 export const MapView = () => {
-//   collectors.features.forEach((feature, index) => {
-//     console.log(feature.geometry.coordinates);
-// });
   const [open, setOpen] = React.useState(false);
+  const [selectedLandmark, setSelectedLandmark] = React.useState(null);
+
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
   const style = {
     position: "absolute",
     top: "50%",
@@ -24,6 +25,7 @@ export const MapView = () => {
     boxShadow: 24,
     p: 4,
   };
+
   return (
     <div className="MapView">
       <Map
@@ -40,12 +42,31 @@ export const MapView = () => {
             key={i}
             longitude={Number(feature.geometry.coordinates[0])}
             latitude={Number(feature.geometry.coordinates[1])}
-            onClick={() => setSelectedLandmark(feature)} // Set selected landmark on click
+            onClick={() => {
+              setSelectedLandmark(feature); // Set selected landmark on click
+              handleOpen(); // Open the modal when a pin is clicked
+            }}
           >
             <img src="src/pin.svg" />
           </Marker>
         ))}
       </Map>
+      <Modal open={open} onClose={handleClose}>
+        <Box sx={style}>
+          {selectedLandmark && (
+            <>
+              <Typography variant="h5" gutterBottom>
+                {selectedLandmark.properties.dropoff_sitename}
+              </Typography>
+              <Typography variant="body1" gutterBottom>
+                {selectedLandmark.properties.address}
+              </Typography>
+
+              <Button onClick={handleClose}>Close</Button>
+            </>
+          )}
+        </Box>
+      </Modal>
     </div>
   );
 };
