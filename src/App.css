@@ -14,7 +14,7 @@ body,
   background-color: #add8e6; /* Light Blue */
 }
 
-.Map {
+.MapView {
   flex: 2;
   background-color: #90ee90; /* Light Green */
 }
