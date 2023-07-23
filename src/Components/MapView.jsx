@@ -3,7 +3,7 @@ import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 
-export const Map = () => {
+export const MapView = () => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -19,7 +19,7 @@ export const Map = () => {
     p: 4,
   };
   return (
-    <div className="Map">
+    <div className="MapView">
       <Box display="flex" justifyContent="center">
         <Button variant="contained" target="_" href="https://google.com">
           Collect For Your Neighborhood!
