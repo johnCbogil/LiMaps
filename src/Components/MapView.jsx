@@ -27,7 +27,13 @@ export const MapView = () => {
   };
 
   return (
-    <div className="MapView">
+    <div className="MapView" style={{ position: 'relative' }}>
+      <Box display="flex" justifyContent="center" style={{ position: 'absolute', bottom: 20, left: '50%', transform: 'translateX(-50%)', zIndex: 1 }}>
+        <Button variant="contained" target="_" href="https://google.com">
+          Collect For Your Neighborhood!
+        </Button>
+      </Box>
+
       <Map
         mapboxAccessToken="pk.eyJ1Ijoiam9obmNib2dpbCIsImEiOiJjbGtlNDFnM2kxMzk0M3JsczNpN2RrenhoIn0.41osgqUQ7EAVlfesFgIzJg"
         initialViewState={{
