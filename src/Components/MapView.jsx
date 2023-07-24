@@ -29,7 +29,7 @@ export const MapView = () => {
   return (
     <div className="MapView" style={{ position: 'relative' }}>
       <Box display="flex" justifyContent="center" style={{ position: 'absolute', bottom: 20, left: '50%', transform: 'translateX(-50%)', zIndex: 1 }}>
-        <Button variant="contained" target="_" href="https://google.com">
+        <Button variant="contained" target="_" href="https://h7vwjmp5b9u.typeform.com/to/fJrJBaBF">
           Collect For Your Neighborhood!
         </Button>
       </Box>
