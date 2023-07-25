@@ -26,9 +26,13 @@ export const MapView = () => {
     p: 4,
   };
 
+//   collectors.forEach(function(item) {
+//     console.log(`Latitude: ${item.Latitude}, Longitude: ${item.Longitude}`);
+// });
+
   return (
     <div className="MapView" style={{ position: 'relative' }}>
-      <Box display="flex" justifyContent="center" style={{ position: 'absolute', bottom: 20, left: '50%', transform: 'translateX(-50%)', zIndex: 1 }}>
+      <Box display="flex" justifyContent="center" style={{ position: 'absolute', bottom: 60, left: '50%', transform: 'translateX(-50%)', zIndex: 1 }}>
         <Button variant="contained" target="_" href="https://h7vwjmp5b9u.typeform.com/to/fJrJBaBF">
           Collect For Your Neighborhood!
         </Button>
@@ -43,11 +47,11 @@ export const MapView = () => {
         }}
         mapStyle="mapbox://styles/mapbox/streets-v11"
       >
-        {collectors.features.map((feature, i) => (
+        {collectors.map((feature, i) => (
           <Marker
             key={i}
-            longitude={Number(feature.geometry.coordinates[0])}
-            latitude={Number(feature.geometry.coordinates[1])}
+            longitude={feature.Longitude}
+            latitude={feature.Latitude}
             onClick={() => {
               setSelectedLandmark(feature); // Set selected landmark on click
               handleOpen(); // Open the modal when a pin is clicked
@@ -62,10 +66,19 @@ export const MapView = () => {
           {selectedLandmark && (
             <>
               <Typography variant="h5" gutterBottom>
-                {selectedLandmark.properties.dropoff_sitename}
+                {selectedLandmark.SiteName}
               </Typography>
               <Typography variant="body1" gutterBottom>
-                {selectedLandmark.properties.address}
+                {selectedLandmark.SiteAddr}
+              </Typography>
+              <Typography variant="body1" gutterBottom>
+                {selectedLandmark["Accepted Recycleables"]}
+              </Typography>
+              <Typography variant="body1" gutterBottom>
+                {selectedLandmark["Available Hours"]}
+              </Typography>
+              <Typography variant="body1" gutterBottom>
+                {selectedLandmark["See Site for More Options"]}
               </Typography>
 
               <Button onClick={handleClose}>Close</Button>

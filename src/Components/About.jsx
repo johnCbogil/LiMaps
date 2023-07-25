@@ -7,7 +7,7 @@ export const About = () => {
     <div className="About">
       <Container>
         <Typography variant="h2" gutterBottom>
-          LiMaps
+        JuiceDrop
         </Typography>
         <Typography variant="body1" gutterBottom>
           Here's some text for my component. This is just an example. You can
