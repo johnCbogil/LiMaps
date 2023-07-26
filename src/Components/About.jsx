@@ -1,9 +1,21 @@
 import React from "react";
-import Typography from "@mui/material/Typography";
+import { Typography, Button, Collapse } from "@mui/material";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 
 export const About = () => {
+  const [openAbout, setOpenAbout] = React.useState(false);
+  const [openInstructions, setOpenInstructions] = React.useState(false);
+  const [openDisclaimer, setOpenDisclaimer] = React.useState(false);
+  const handleAboutClick = () => {
+    setOpenAbout(!openAbout);
+  };
+  const handleInstructionsClick = () => {
+    setOpenInstructions(!openInstructions);
+  };
+  const handleDisclaimerClick = () => {
+    setOpenDisclaimer(!openDisclaimer);
+  };
   return (
     <div className="About">
       <Container
@@ -17,15 +29,25 @@ export const About = () => {
           Join to find battery disposal at your doorstep.
         </Typography>
         <Box m={4}></Box>
-        <Typography variant="h6">About</Typography>
-        <Typography variant="body1" gutterBottom>
-          JuiceDrop mobilizes neighbors and households to recycle more
-          batteries. We find a place for everything and do it together to create
-          less waste - neighbors who compost, recycle, reuse are the people who
-          treat our city more like a home.
-        </Typography>
+
+        <Button onClick={handleAboutClick} variant="outlined">
+          {openAbout ? "Hide" : "About"}
+        </Button>
+        <Collapse in={openAbout}>
         <Box m={4}></Box>
-        <Typography variant="h6">FAQ</Typography>
+          <Typography variant="body1" gutterBottom>
+            JuiceDrop mobilizes neighbors and households to recycle more
+            batteries. We find a place for everything and do it together to
+            create less waste - neighbors who compost, recycle, reuse are the
+            people who treat our city more like a home.
+          </Typography>
+        </Collapse>
+        <Box m={4}></Box>
+        <Button onClick={handleInstructionsClick} variant="outlined">
+          {openInstructions ? "Hide" : "Instructions"}
+        </Button>
+        <Collapse in={openInstructions}>
+        <Box m={4}></Box>
         <Typography variant="body1" gutterBottom>
           The information available is intended for recycling the most commonly
           purchases batteries.
@@ -50,7 +72,6 @@ export const About = () => {
         <Typography variant="body1" gutterBottom>
           Types of batteries:
         </Typography>
-
         <ul>
           <li>
             <Typography variant="body1" gutterBottom>
@@ -93,8 +114,13 @@ export const About = () => {
             </ul>
           </li>
         </ul>
+        </Collapse>
         <Box m={4}></Box>
-        <Typography variant="h6">Disclaimer</Typography>
+        <Button onClick={handleDisclaimerClick} variant="outlined">
+          {openDisclaimer ? "Hide" : "Disclaimer"}
+        </Button>
+        <Box m={4}></Box>
+        <Collapse in={openDisclaimer}>
         <Typography variant="body1" gutterBottom>
           The information provided on this website is for general informational
           purposes only and does not constitute professional advice. Battery
@@ -104,7 +130,9 @@ export const About = () => {
           resulting from the use of this website or the recycling of batteries
           and e-waste.
         </Typography>
+        </Collapse>
       </Container>
+      
     </div>
   );
 };
