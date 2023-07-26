@@ -34,7 +34,7 @@ export const MapView = () => {
     <div className="MapView" style={{ position: 'relative' }}>
       <Box display="flex" justifyContent="center" style={{ position: 'absolute', bottom: 60, left: '50%', transform: 'translateX(-50%)', zIndex: 1 }}>
         <Button variant="contained" target="_" href="https://h7vwjmp5b9u.typeform.com/to/fJrJBaBF">
-          Collect For Your Neighborhood!
+        Sign Up to Collect Batteries
         </Button>
       </Box>
 
@@ -73,6 +73,12 @@ export const MapView = () => {
               </Typography>
               <Typography variant="body1" gutterBottom>
                 {selectedLandmark.SiteAddr}
+              </Typography>
+              <Typography variant="body1" gutterBottom>
+                {selectedLandmark.NTAName}, {selectedLandmark.Borough}
+              </Typography>
+              <Typography variant="body1" gutterBottom>
+                {selectedLandmark.Zipcode}
               </Typography>
               <Typography variant="body1" sx={{ fontWeight: 'bold' }} gutterBottom>
                 Items Accepted
