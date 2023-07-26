@@ -6,10 +6,12 @@ import Box from "@mui/material/Box";
 export const About = () => {
   return (
     <div className="About">
-            <Container sx={{
-        height: '100vh', // Modify this to adjust the height of your container
-        overflow: 'auto',
-      }}>
+      <Container
+        sx={{
+          height: "100vh",
+          overflow: "auto",
+        }}
+      >
         <Typography variant="h2">JuiceDrop</Typography>
         <Typography variant="body1" gutterBottom>
           Join to find battery disposal at your doorstep.
@@ -57,7 +59,9 @@ export const About = () => {
             <ul>
               <li>
                 <Typography variant="body1" gutterBottom>
-                Alkaline, lithium, silver oxide, zinc-air, zinc-carbon, and zinc-chloride, commonly known as AA, AAA, 9V, D-cell, and button cell are all types of primary batteries.
+                  Alkaline, lithium, silver oxide, zinc-air, zinc-carbon, and
+                  zinc-chloride, commonly known as AA, AAA, 9V, D-cell, and
+                  button cell are all types of primary batteries.
                 </Typography>
               </li>
             </ul>
@@ -69,7 +73,8 @@ export const About = () => {
             <ul>
               <li>
                 <Typography variant="body1" gutterBottom>
-                Nickel Cadmium batteries are used for cordless power tools, two-way radios, cordless phones, digital cameras.
+                  Nickel Cadmium batteries are used for cordless power tools,
+                  two-way radios, cordless phones, digital cameras.
                 </Typography>
               </li>
             </ul>
@@ -79,9 +84,10 @@ export const About = () => {
               Lithium Ion Batteries
             </Typography>
             <ul>
-            <li>
+              <li>
                 <Typography variant="body1" gutterBottom>
-                Batteries for high drain devices. Cell phone, laptops, e-cigarettes, toys, tablets, small devices. 
+                  Batteries for high drain devices. Cell phone, laptops,
+                  e-cigarettes, toys, tablets, small devices.
                 </Typography>
               </li>
             </ul>
@@ -90,8 +96,14 @@ export const About = () => {
         <Box m={4}></Box>
         <Typography variant="h6">Disclaimer</Typography>
         <Typography variant="body1" gutterBottom>
-        The information provided on this website is for general informational purposes only and does not constitute professional advice. Battery recycling and e-waste management involve inherent risks. Users are encouraged to follow local regulations and seek professional advice for personalized guidance. We are not liable for any damages or losses resulting from the use of this website or the recycling of batteries and e-waste.
-                </Typography>
+          The information provided on this website is for general informational
+          purposes only and does not constitute professional advice. Battery
+          recycling and e-waste management involve inherent risks. Users are
+          encouraged to follow local regulations and seek professional advice
+          for personalized guidance. We are not liable for any damages or losses
+          resulting from the use of this website or the recycling of batteries
+          and e-waste.
+        </Typography>
       </Container>
     </div>
   );
