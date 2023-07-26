@@ -65,14 +65,23 @@ export const MapView = () => {
         <Box sx={style}>
           {selectedLandmark && (
             <>
-              <Typography variant="h5" gutterBottom>
+              <Typography variant="h5" sx={{ fontWeight: 'bold' }} gutterBottom>
                 {selectedLandmark.SiteName}
+              </Typography>
+              <Typography variant="body1" sx={{ fontWeight: 'bold' }} gutterBottom>
+                Address:
               </Typography>
               <Typography variant="body1" gutterBottom>
                 {selectedLandmark.SiteAddr}
               </Typography>
+              <Typography variant="body1" sx={{ fontWeight: 'bold' }} gutterBottom>
+                Items Accepted:
+              </Typography>
               <Typography variant="body1" gutterBottom>
                 {selectedLandmark["Accepted Recycleables"]}
+              </Typography>
+              <Typography variant="body1" sx={{ fontWeight: 'bold' }} gutterBottom>
+                Hours:
               </Typography>
               <Typography variant="body1" gutterBottom>
                 {selectedLandmark["Available Hours"]}
